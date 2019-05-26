@@ -15,10 +15,12 @@
 </head>
 <body>
 
-
+    <!-- Body Container -->
     <div class="cont" id="cont">
-      <div id="term" class="term term-ready">
-        <input class="term-input-hide" />
+
+      <!-- Terminal Window -->
+      <div id="term" class="term term-ready" onmousedown="changeFocus('#term')">
+        <input class="term-input-hide" disabled/>
         <div class="term-bar">
           <div class="term-winctrl">
             <span class="term-btn close"></span>
@@ -34,10 +36,12 @@
             <span class="term-prompt" id="typed"></span><span class="term-caret">&#x2588;</span>
           </div>
         </div>
-      </div>
-      <div class="folder-cont">
-        <div class="folder-cont-folders" id="folder-projects">
+      </div><!-- END Terminal Window -->
 
+
+      <!-- Projects Folder -->
+      <div class="folder-cont">
+        <div class="folder-cont-folders" id="folder-projects" ondblclick="openFolder('#folder-projects-open')">
           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1.1" class="folder-svg">
            <rect style="opacity:0.2" width="50" height="28" x="7" y="28" rx="2.5" ry="2.5"/>
            <path style="fill:#4877b1" d="M 7,44.5 C 7,45.885 8.115,47 9.5,47 H 54.5 C 55.885,47 57,45.885 57,44.5 V 17.5 C 57,16.115 55.885,15 54.5,15 H 29 V 12.5 C 29,11.115 27.885,10 26.5,10 H 9.5 C 8.115,10 7,11.115 7,12.5"/>
@@ -48,11 +52,11 @@
           </svg>
           <br>
           <span class="folder-name">Projects</span>
+        </div><!-- END Projects Folder -->
 
-        </div>
 
-        <div class="folder-cont-folders" id="folder-social">
-
+        <!-- Social Folder -->
+        <div class="folder-cont-folders" id="folder-social" ondblclick="openFolder('#folder-social-open')">
           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1.1" class="folder-svg">
            <rect style="opacity:0.2" width="50" height="28" x="7" y="28" rx="2.5" ry="2.5"/>
            <path style="fill:#4877b1" d="M 7,44.5 C 7,45.885 8.115,47 9.5,47 H 54.5 C 55.885,47 57,45.885 57,44.5 V 17.5 C 57,16.115 55.885,15 54.5,15 H 29 V 12.5 C 29,11.115 27.885,10 26.5,10 H 9.5 C 8.115,10 7,11.115 7,12.5"/>
@@ -63,11 +67,11 @@
           </svg>
           <br>
           <span class="folder-name folder-name-social">Social</span>
+        </div><!-- END Social Folder -->
 
-        </div>
 
-        <div class="folder-cont-folders" id="folder-blog">
-
+        <!-- Blog Folder -->
+        <div class="folder-cont-folders" id="folder-blog" ondblclick="openFolder('#folder-blog-open')">
           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1.1" class="folder-svg">
            <rect style="opacity:0.2" width="50" height="28" x="7" y="28" rx="2.5" ry="2.5"/>
            <path style="fill:#4877b1" d="M 7,44.5 C 7,45.885 8.115,47 9.5,47 H 54.5 C 55.885,47 57,45.885 57,44.5 V 17.5 C 57,16.115 55.885,15 54.5,15 H 29 V 12.5 C 29,11.115 27.885,10 26.5,10 H 9.5 C 8.115,10 7,11.115 7,12.5"/>
@@ -78,16 +82,42 @@
           </svg>
           <br>
           <span class="folder-name folder-name-blog">Blog</span>
+        </div><!-- END Blog Folder -->
 
-        </div>
 
       </div>
-      <div class="folder-open" id="folder-social-open">
-        <div id="term" class="term term-ready">
-          <input class="term-input-hide" />
+
+
+      <!-- Opened Projects Folder -->
+      <div class="folder-open" id="folder-projects-open" onmousedown="changeFocus('#folder-projects-open')">
+        <div class="term term-ready term-folder">
+          <input class="term-input-hide" disabled />
           <div class="term-bar">
             <div class="term-winctrl">
-              <span class="term-btn close"></span>
+              <span class="term-btn close" onclick="closeBtn('#folder-projects-open')"></span>
+              <span class="term-btn minimise"></span>
+              <span class="term-btn maximise"></span>
+            </div>
+            <span class="term-title">Projects</span>
+            <span class="term-right"></span>
+
+          </div>
+          <div class="term-cont">
+
+          </div>
+        </div>
+      </div><!--END Opened Projects Folder -->
+
+
+
+
+      <!-- Opened Social Folder -->
+      <div class="folder-open" id="folder-social-open" onmousedown="changeFocus('#folder-social-open')">
+        <div class="term term-ready term-folder">
+          <input class="term-input-hide" disabled />
+          <div class="term-bar">
+            <div class="term-winctrl">
+              <span class="term-btn close" onclick="closeBtn('#folder-social-open')"></span>
               <span class="term-btn minimise"></span>
               <span class="term-btn maximise"></span>
             </div>
@@ -107,9 +137,31 @@
             </a>
           </div>
         </div>
-      </div>
+      </div><!--END Opened Social Folder -->
 
-    </div>
+
+      <!-- Opened Blog Folder -->
+      <div class="folder-open" id="folder-blog-open" onmousedown="changeFocus('#folder-blog-open')">
+        <div class="term term-ready term-folder">
+          <input class="term-input-hide" disabled />
+          <div class="term-bar">
+            <div class="term-winctrl">
+              <span class="term-btn close" onclick="closeBtn('#folder-blog-open')"></span>
+              <span class="term-btn minimise"></span>
+              <span class="term-btn maximise"></span>
+            </div>
+            <span class="term-title">Blog</span>
+            <span class="term-right"></span>
+
+          </div>
+          <div class="term-cont">
+
+          </div>
+        </div>
+      </div><!--END Opened Blog Folder -->
+
+
+    </div><!-- END Body Container -->
 
 
 
@@ -122,7 +174,22 @@
         // });  
         // setInterval(caretToggle, 500);
 
+        function openFolder(id) {
+          $(id).css("display", "flex");
+          $(id).css("z-index", "3");
+        }
 
+        function closeBtn(id) {
+          $(id).css("display", "none");
+        }
+
+        function changeFocus(id) {
+            $("#folder-social-open").css("z-index", "1");
+            $("#folder-projects-open").css("z-index", "1");
+            $("#folder-blog-open").css("z-index", "1");
+            $("#term").css("z-index", "1");
+            $(id).css("z-index", "2");
+        }
 
         function caretToggle() {
           var caret = document.getElementsByClassName("term-caret")[0];
@@ -155,19 +222,25 @@
           typeSpeed: 40
         });
 
-        $("#term").draggable (
+        // $("#term").mousedown(function() {
+        //   $("#term").not(this).css("z-index", "1")
+        //   $(this).css("z-index", "2")
+        // })
 
+
+        $("#term").draggable (
+          { containment: "#cont", scroll: false }
         );
         $(".folder-cont-folders").draggable (
-
+          { containment: "#cont", scroll: false }
         );
         $(".folder-open").draggable (
-
+          { containment: "#cont", scroll: false }
         );
 
-        document.getElementById("folder-social").addEventListener("dblclick", function(){
-          document.getElementById("folder-social-open").style.display = "flex";
-        });
+        // document.getElementById("folder-social").addEventListener("dblclick", function(){
+        //   document.getElementById("folder-social-open").style.display = "flex";
+        // });
 
     </script>
 </body>

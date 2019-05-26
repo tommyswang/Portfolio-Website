@@ -37,10 +37,11 @@ div.cont {
   width: 20rem;
   /* margin: 2rem 0.7rem; */
   background: #111;
-  border: 1px solid #252525;
+  border: 1px solid #4b4b4b;
   border-radius: 0.5rem;
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.4);
 }
+
 
 .term-bar {
   height: 2rem;
@@ -48,9 +49,21 @@ div.cont {
   display: flex;
   flex-direction: row;
   background-color: #37383b;
-  border-bottom: 1px solid #252525;
+  border-bottom: 1px solid #4b4b4b;
   border-radius: 0.45rem 0.45rem 0 0;
   justify-content: space-between;
+}
+
+.term-folder {
+  background-color: #242834;
+  width: 19rem;
+  height: 20rem;
+  border-radius: 0.5rem;
+  border: 1px solid #4b4b4b;
+}
+
+.term-folder .term-bar {
+  background-color: #393B48;
 }
 
 .term-winctrl {
@@ -82,7 +95,7 @@ div.cont {
   font-family: "Montserrat", sans-serif;
   font-size: 0.85rem;
   color: #ddd;
-  margin: auto 0;
+  margin: auto;
 }
 
 .term-bar-gh {
@@ -173,14 +186,11 @@ div.cont {
   margin: 17px;
 }
 
-#folder-social-open {
+#folder-social-open, #folder-projects-open, #folder-blog-open {
   display: none;
   align-items: center;
   justify-content: space-around;
   position: absolute;
-  height: 25rem;
-  width: 20rem;
-
 }
 
 .folder-open svg {
