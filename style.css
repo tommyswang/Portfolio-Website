@@ -22,6 +22,33 @@ a {
   text-decoration: none;
 }
 
+#folders-div {
+  display: none;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s; /* Firefox < 16 */
+      -ms-animation: fadein 1s; /* Internet Explorer */
+       -o-animation: fadein 1s; /* Opera < 12.1 */
+          animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
 div.cont {
   display: flex;
   flex-direction: column;
@@ -113,7 +140,7 @@ div.cont {
 }
 
 .term-cont {
-  color: #fff;
+  color: #33FF33;
   padding: 0.5rem;
 }
 
@@ -128,7 +155,7 @@ div.cont {
 
 .term-caret {
   display: inline-block;
-  color: #fff;
+  color: #33FF33;
   padding: 0;
   margin: 0;
   font-family: inherit;
@@ -165,7 +192,8 @@ div.cont {
 }
 
 #typed {
-  white-space: pre;
+  white-space: pre-line;
+  line-height: 1.4;
 }
 
 
@@ -184,6 +212,19 @@ div.cont {
 
 .folder-name-blog {
   margin: 17px;
+}
+
+.folder-items {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+.folder-items svg {
+  display: block;
+}
+
+.folder-items span {
+  color: white;
 }
 
 #folder-social-open, #folder-projects-open, #folder-blog-open {
