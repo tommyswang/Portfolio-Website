@@ -159,7 +159,7 @@ div.cont {
   padding: 0;
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 14px;
 }
 .term-caret.blink {
   color: transparent;
@@ -193,7 +193,8 @@ div.cont {
 
 #typed {
   white-space: pre-line;
-  line-height: 1.4;
+  font-size:14px;
+  line-height: 0.3;
 }
 
 
@@ -225,6 +226,7 @@ div.cont {
 
 .folder-items span {
   color: white;
+  font-size: 12px;
 }
 
 #folder-social-open, #folder-projects-open, #folder-blog-open {
@@ -236,6 +238,6 @@ div.cont {
 
 .folder-open svg {
   width: 40px;
-  margin: 10px;
+  margin: 0 0 -8px 10px;
   fill: white;
 }
